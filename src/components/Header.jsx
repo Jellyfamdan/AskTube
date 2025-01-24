@@ -1,20 +1,20 @@
 // Header.jsx
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/Header.css";
 
 const Header = () => {
+    const [scrolled, setScrolled] = useState(false);
+
     return (
-      <div>
-        <header className="header">
-        <button className="menu-button">☰</button>
-        <h1 className="title">[AskTube]</h1>
-        <div className="auth-buttons">
-          <button className="button">Sign Up</button>
-          <button className="button">Log In</button>
-        </div>
-        </header>   
-      </div>
+        <header className={`header ${scrolled ? "scrolled" : ""}`}>
+            <button className="menu-button">☰</button>
+            <h1 className="title">[AskTube]</h1>
+            <div className="auth-buttons">
+                <button className="button">Sign Up</button>
+                <button className="button">Log In</button>
+            </div>
+        </header>
     );
-}
+};
 
 export default Header;
